@@ -6,11 +6,14 @@ import CardGrid from "./components/CardGrid";
 import Search from "./components/Search";
 
 class App extends React.Component {
-  state = {
-    searchedUser: "",
-    user: {},
-    following: []
-  };
+  constructor() {
+    super();
+    this.state = {
+      searchedUser: "",
+      user: {},
+      following: []
+    };
+  }
 
   componentDidMount() {
     fetch(`https://api.github.com/users/Kenneth-Brandon`)
@@ -45,6 +48,7 @@ class App extends React.Component {
       searchedUser: event.target.value
     });
   };
+
   render() {
     return (
       <div className="App container">
